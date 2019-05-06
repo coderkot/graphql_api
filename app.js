@@ -1,9 +1,11 @@
 const express = require('express');
-const {buildSchema} = require('graphql');
+//const {buildSchema} = require('graphql');
 const graphqlHTTP = require('express-graphql');
+const schema = require('./src/schema');
+
 let port = 3000;
 
-let schema = buildSchema(`
+/* let schema = buildSchema(`
     type Query {
         postTitle: String,
         blogTitle: String
@@ -17,12 +19,12 @@ let root = {
     blogTitle: () => {
         return 'scotch.io';
     }
-};
+}; */
 
 const app = express();
 app.use('/', graphqlHTTP({
     schema: schema,
-    rootValue: root,
+    //rootValue: root,
     graphiql: true
 }));
 
