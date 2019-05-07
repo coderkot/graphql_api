@@ -4,23 +4,6 @@ const graphqlHTTP = require('express-graphql');
 const schema = require('./src/schema');
 
 let port = 3000;
-
-/* let schema = buildSchema(`
-    type Query {
-        postTitle: String,
-        blogTitle: String
-    }
-`);
-
-let root = {
-    postTitle: () => {
-        return 'Build a simple GQL Server with Express';
-    },
-    blogTitle: () => {
-        return 'scotch.io';
-    }
-}; */
-
 const app = express();
 app.use('/', graphqlHTTP({
     schema: schema,
