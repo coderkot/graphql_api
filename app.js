@@ -13,6 +13,5 @@ app.use('/api/v1/data', graphqlHTTP({
 }));
 
 app.listen(port);
-console.log('GQL API server running at localhost:' + port);
+console.log('GQL API server running at localhost:' + port + '/api/v1/data');
 console.log('Server ip: ' + ip.address() + ":" + port);
-console.log('Use URL for getting data from API: localhost:' + port + '/api/v1/data');
